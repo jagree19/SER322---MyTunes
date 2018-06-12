@@ -14,9 +14,9 @@ if(isset($_GET["sqlquery"])) {
 }
 
 $host = '127.0.0.1'; //host address
-$user = '***'; //change to user name for database
-$pass = '***'; //change to password for database
-$dbName = '***'; // change to database name
+$user = 'tester'; //change to user name for database
+$pass = '1234outfd'; //change to password for database
+$dbName = 'MyTunes1.0'; // change to database name
 
 //create connection
 $connection = mysqli_connect($host, $user, $pass, $dbName);
