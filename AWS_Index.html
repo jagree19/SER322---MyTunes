@@ -22,7 +22,7 @@
     </a><br />
     <h1>Links that will run custom queries</h1><br />
     <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,ReleaseDate FROM Songs, Albums_has_Songs, Bands WHERE BandID=Albums_Bands_BandID AND BandName='Alice In Chains' AND SongID = Songs_SongID;">
-      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Alice in Chains</button>
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Alice In Chains</button>
     </a>
     <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,ReleaseDate FROM Songs, Albums_has_Songs, Bands WHERE BandID=Albums_Bands_BandID AND BandName='Mad Season' AND SongID = Songs_SongID;">
       <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Mad Season</button>
@@ -31,13 +31,16 @@
       <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Ween</button>
     </a>
     <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='Dirt' AND SongID = Songs_SongID;">
-      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs On Dirt</button>
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs on Dirt</button>
     </a>
     <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='Above' AND SongID = Songs_SongID;">
       <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs on Above</button>
-    </a><br />
+    </a>
     <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='Quebec' AND SongID = Songs_SongID;">
       <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs on Quebec</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='White Pepper' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs on White Pepper</button>
     </a><br />
     <a href="AWS_DB_Controller.php?sqlquery=SELECT MusicianID,Name,Instrument,StartDate,EndDate FROM Musicians,Bands,Musicians_has_Bands WHERE BandName = 'Mad Season'
                 AND MusicianID = Musicians_MusicianID AND BandID = Bands_BandID;">
