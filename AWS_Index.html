@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyTunes 1.0</title>
+  </head>
+  <body>
+    <h1>Links that will simply show the contents of the tables</h1><br />
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT * FROM Albums;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#4CAF50">Get Albums</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT * FROM Songs;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#4CAF50">Get Songs</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT * FROM Publishers;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#4CAF50">Get Publishers</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT * FROM Musicians;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#4CAF50">Get Musicians</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT * FROM Bands;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#4CAF50">Get Bands</button>
+    </a><br />
+    <h1>Links that will run custom queries</h1><br />
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,ReleaseDate FROM Songs, Albums_has_Songs, Bands WHERE BandID=Albums_Bands_BandID AND BandName='Alice In Chains' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Alice in Chains</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,ReleaseDate FROM Songs, Albums_has_Songs, Bands WHERE BandID=Albums_Bands_BandID AND BandName='Mad Season' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Mad Season</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,ReleaseDate FROM Songs, Albums_has_Songs, Bands WHERE BandID=Albums_Bands_BandID AND BandName='Ween' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs By Ween</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='Dirt' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs On Dirt</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='Above' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs on Above</button>
+    </a><br />
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT SongID,Title,AlbumName FROM Songs, Albums_has_Songs, Albums WHERE AlbumID=Albums_AlbumID AND AlbumName='Quebec' AND SongID = Songs_SongID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Songs on Quebec</button>
+    </a><br />
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT MusicianID,Name,Instrument,StartDate,EndDate FROM Musicians,Bands,Musicians_has_Bands WHERE BandName = 'Mad Season'
+                AND MusicianID = Musicians_MusicianID AND BandID = Bands_BandID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Members of Mad Season</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT MusicianID,Name,Instrument,StartDate,EndDate FROM Musicians,Bands,Musicians_has_Bands WHERE BandName = 'Alice In Chains'
+                AND MusicianID = Musicians_MusicianID AND BandID = Bands_BandID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Members of Alice In Chains</button>
+    </a>
+    <a href="AWS_DB_Controller.php?sqlquery=SELECT MusicianID,Name,Instrument,StartDate,EndDate FROM Musicians,Bands,Musicians_has_Bands WHERE BandName = 'Ween'
+                AND MusicianID = Musicians_MusicianID AND BandID = Bands_BandID;">
+      <button type="button" style="font-size:20px;height:200px;width:200px;background-color:#008CBA">Members of Ween</button>
+    </a>
+  </body>
+  </html>
