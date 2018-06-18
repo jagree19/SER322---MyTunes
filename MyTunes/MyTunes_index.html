@@ -26,6 +26,32 @@
     <h1>Links to forms to add records to tables</h1>
     <a class="btn btn-success" href="addBand.html">Add A Band</a>
     <a class="btn btn-success" href="addAlbum.html">Add An Album</a>
+    <br />
+    <h1>Links to edit records in a table</h1>
+    <form class="form-inline" action = 'editMusician.html' method = 'post'>
+      <label>Choose a Musician's record to edit: </label>
+      <select class="form-control" id="Musician" name="Musician">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT MusicianID, Name FROM Musicians");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['MusicianID'];
+          $name = $row['Name'];
+          echo '<option value="'.$id.'">'.$name.'</option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-info" type="submit" value="Edit Record"/>
+    </form>
+
+
+  </body>
+</html>
 
 
   </body>
