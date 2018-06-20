@@ -14,11 +14,11 @@
     <form class="form-inline" action = 'showTables.php' method = 'post'>
       <lablel>Show Contents of Table: </label>
         <select class="form-control" id="Table" name="table_name">
-          <option value="Albums">Albums</option>
-          <option value="Bands">Bands</option>
-          <option value="Musicians">Musicians</option>
-          <option value="Publishers">Publishers</option>
-          <option value="Songs">Songs</option>
+          <option value="ALBUM">ALBUM</option>
+          <option value="BAND">BAND</option>
+          <option value="MUSICIAN">MUSICIAN</option>
+          <option value="PRODUCER">PRODUCER</option>
+          <option value="TRACK">TRACK</option>
       </select>
       <input class="btn btn-primary" type="submit" value="submit"/>
     </form>
@@ -36,13 +36,14 @@
         require_once('db_connect.php');
 
         //get results from database
-        $result = mysqli_query($connection,"SELECT MusicianID, Name FROM Musicians");
+        $result = mysqli_query($connection,"SELECT MusicianID, firstName, lastName FROM MUSICIAN");
         while($row=mysqli_fetch_array($result))
         {
           unset($id, $name);
           $id = $row['MusicianID'];
-          $name = $row['Name'];
-          echo '<option value="'.$id.'">'.$name.'</option>';
+          $firstName = $row['firstName'];
+          $lastName = $row['lastName'];
+          echo '<option value="'.$id.'">'.$firstName.' '.$lastName.'</option>';
         }
         ?>
       </select>

@@ -3,11 +3,12 @@
 require_once('db_connect.php');
 
 $id = mysqli_real_escape_string($connection,$_POST['musician_id']);
-$musician_name = mysqli_real_escape_string($connection,$_POST['musician_name']);
-$birth_date = date('Y-m-d', strtotime($_POST['birth_date']));
-$instrument = mysqli_real_escape_string($connection,$_POST['musician_instrument']);
+$first_name = mysqli_real_escape_string($connection,$_POST['first_name']);
+$last_name = mysqli_real_escape_string($connection,$_POST['last_name']);
+$email = mysqli_real_escape_string($connection,$_POST['email_address']);
+$phone = $_POST['phone_number'];
 
-$sql = "UPDATE Musicians SET Name='$musician_name', Instrument='$instrument', BirthDate='$birth_date' WHERE MusicianID = '$id'";
+$sql = "UPDATE MUSICIAN SET firstName='$first_name', lastName='$last_name', emailAddress='$email', phoneNumber='$phone' WHERE MusicianID = '$id'";
 if(mysqli_query($connection,$sql)){
   echo "Records added Successfully.";
 } else {

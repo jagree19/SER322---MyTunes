@@ -20,15 +20,16 @@
 
   //get results from database
   $ID = mysqli_real_escape_string($connection,$_POST['Musician']);
-  $query = "SELECT * FROM Musicians WHERE MusicianID=".$ID.";";
+  $query = "SELECT * FROM MUSICIAN WHERE MusicianID=".$ID.";";
   $result = mysqli_query($connection,$query);
   while($row=mysqli_fetch_array($result))
   {
     unset($id, $name, $instrument, $birthDate);
     $id = $row['MusicianID'];
-    $name = $row['Name'];
-    $instrument = $row['Instrument'];
-    $birthDate = $row['BirthDate'];
+    $firstName = $row['firstName'];
+    $lastName = $row['lastName'];
+    $email = $row['emailAddress'];
+    $phone = $row['phoneNumber'];
 
   }
   ?>
@@ -41,21 +42,27 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="MusicianName" class="col-sm-2 control-label">Musician Name: </label>
+      <label for="FirstName" class="col-sm-2 control-label">First Name: </label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="musician_name" id="musician_name" value="<?php echo $name?>">
+        <input type="text" class="form-control" name="first_name" id="first_name" value="<?php echo $firstName?>">
       </div>
     </div>
     <div class="form-group">
-      <label for="MusicianInstrument" class="col-sm-2 control-label">Instrument: </label>
+      <label for="LastName" class="col-sm-2 control-label">Last Name: </label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="musician_instrument" id="musician_instrument" value="<?php echo $instrument?>">
+        <input type="text" class="form-control" name="last_name" id="last_name" value="<?php echo $lastName?>">
       </div>
     </div>
     <div class="form-group">
-      <label for="BirthDate" class="col-sm-2 control-label">BirthDate</label>
+      <label for="Email" class="col-sm-2 control-label">Email Address: </label>
       <div class="col-sm-10">
-        <input data-provide="datepicker" data-date-format="yyyy-mm-dd" class="form-control" name="birth_date" id="birth_date" value="<?php echo $birthDate?>" placeholder="yyyy-mm-dd">
+        <input type="text" class="form-control" name="email_address" id="email_address" value="<?php echo $email?>">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Phone" class="col-sm-2 control-label">Phone Number: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="phone_number" id="phone_number" value="<?php echo $phone?>">
       </div>
     </div>
     <div class="form-group">

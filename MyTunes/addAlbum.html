@@ -19,9 +19,9 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="release_date" class="col-sm-2 control-label">Release Date</label>
+      <label for="inputgenre" class="col-sm-2 control-label">Genre</label>
       <div class="col-sm-10">
-        <input data-provide="datepicker" data-date-format="yyyy-mm-dd" class="form-control" name="release_date" id="release_date" placeholder="yyyy-mm-dd">
+        <input type="text" class="form-control" name="genre" id="genre" placeholder="Genre">
       </div>
     </div>
     <div class="form-group">
@@ -31,52 +31,10 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="publisherid" class="col-sm-2 control-label">Publisher</label>
-        <div class="col-sm-10">
-          <select class="form-control" id="Publisher" name="publisher_id">
-            <?php
-
-            require_once('db_connect.php');
-
-            //get results from database
-            $result = mysqli_query($connection,"SELECT PublisherName,PublisherID FROM Publishers");
-            while($row=mysqli_fetch_array($result))
-            {
-              unset($id, $name);
-              $id = $row['PublisherID'];
-              $name = $row['PublisherName'];
-              echo '<option value="'.$id.'">'.$name.'</option>';
-            }
-            ?>
-          </select>
-        </div>
+      <div class="col-sm-offest-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Add Album</button>
       </div>
-      <div class="form-group">
-        <label for="bandid" class="col-sm-2 control-label">Band</label>
-          <div class="col-sm-10">
-            <select class="form-control" id="Band" name="band_id">
-              <?php
-
-              require_once('db_connect.php');
-
-              //get results from database
-              $result = mysqli_query($connection,"SELECT BandName,BandID FROM Bands");
-              while($row=mysqli_fetch_array($result))
-              {
-                unset($id, $name);
-                $id = $row['BandID'];
-                $name = $row['BandName'];
-                echo '<option value="'.$id.'">'.$name.'</option>';
-              }
-              ?>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offest-2 col-sm-10">
-            <button type="submit" class="btn btn-primary">Add Album</button>
-          </div>
-        </div>
-      </form>
-    </body>
+    </div>
+  </form>
+</body>
 </html>
