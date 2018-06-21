@@ -52,6 +52,87 @@
       </select>
       <input class="btn btn-info" type="submit" value="Edit Record"/>
     </form>
+    <form class="form-inline" action = 'editAlbum.html' method = 'post'>
+      <label>Choose an Albums's record to edit: </label>
+      <select class="form-control" id="Album" name="Album">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT AlbumID, albumName FROM ALBUM");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['AlbumID'];
+          $name = $row['albumName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-info" type="submit" value="Edit Record"/>
+    </form>
+    <form class="form-inline" action = 'editBand.html' method = 'post'>
+      <label>Choose a Band's record to edit: </label>
+      <select class="form-control" id="Band" name="Band">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT BandID, bandName FROM BAND");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['BandID'];
+          $name = $row['bandName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-info" type="submit" value="Edit Record"/>
+    </form>
+    <form class="form-inline" action = 'editProducer.html' method = 'post'>
+      <label>Choose a Producer's record to edit: </label>
+      <select class="form-control" id="Producer" name="Producer">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT ProducerID, producerName FROM PRODUCER");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['ProducerID'];
+          $name = $row['producerName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-info" type="submit" value="Edit Record"/>
+    </form>
+    <form class="form-inline" action = 'editTrack.html' method = 'post'>
+      <label>Choose a Track's record to edit: </label>
+      <select class="form-control" id="Track" name="Track">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT TrackID, trackName FROM TRACK");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['TrackID'];
+          $name = $row['trackName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-info" type="submit" value="Edit Record"/>
+    </form>
+
 
 
   </body>
