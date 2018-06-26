@@ -133,6 +133,109 @@
       <input class="btn btn-info" type="submit" value="Edit Record"/>
     </form>
 
+    <h1>Links to delete records in a table</h1>
+    <form class="form-inline" action = 'deleteMusician.html' method = 'post'>
+      <label>Choose a Musician's record to delete: </label>
+      <select class="form-control" id="Musician" name="Musician">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT MusicianID, firstName, lastName FROM MUSICIAN");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['MusicianID'];
+          $firstName = $row['firstName'];
+          $lastName = $row['lastName'];
+          echo '<option value="'.$id.'">'.$firstName.' '.$lastName.'</option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-danger" type="submit" value="Delete Record"/>
+    </form>
+    <form class="form-inline" action = 'deleteAlbum.html' method = 'post'>
+      <label>Choose an Albums's record to delete: </label>
+      <select class="form-control" id="Album" name="Album">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT AlbumID, albumName FROM ALBUM");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['AlbumID'];
+          $name = $row['albumName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-danger" type="submit" value="Delete Record"/>
+    </form>
+    <form class="form-inline" action = 'deleteBand.html' method = 'post'>
+      <label>Choose a Band's record to delete: </label>
+      <select class="form-control" id="Band" name="Band">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT BandID, bandName FROM BAND");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['BandID'];
+          $name = $row['bandName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-danger" type="submit" value="Delete Record"/>
+    </form>
+    <form class="form-inline" action = 'deleteProducer.html' method = 'post'>
+      <label>Choose a Producer's record to delete: </label>
+      <select class="form-control" id="Producer" name="Producer">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT ProducerID, producerName FROM PRODUCER");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['ProducerID'];
+          $name = $row['producerName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-danger" type="submit" value="Delete Record"/>
+    </form>
+    <form class="form-inline" action = 'deleteTrack.html' method = 'post'>
+      <label>Choose a Track's record to delete: </label>
+      <select class="form-control" id="Track" name="Track">
+        <?php
+
+        require_once('db_connect.php');
+
+        //get results from database
+        $result = mysqli_query($connection,"SELECT TrackID, trackName FROM TRACK");
+        while($row=mysqli_fetch_array($result))
+        {
+          unset($id, $name);
+          $id = $row['TrackID'];
+          $name = $row['trackName'];
+          echo '<option value="'.$id.'">'.$name.' </option>';
+        }
+        ?>
+      </select>
+      <input class="btn btn-danger" type="submit" value="Delete Record"/>
+    </form>
+
 
 
   </body>
