@@ -9,6 +9,6 @@ You will also need to have a mysql database set up.  The MyTunesX.X_SQL.sql file
 
 You can also use the AWS named files to access the same database deployed on Amazon Web Services.
 
-*** The AWS database no longer is up and running. ***
+*** The AWS database is no longer up and running. ***
 
 Final version of the project with a pretty GUI is not in this repository.  The testing interface is what is available here.
